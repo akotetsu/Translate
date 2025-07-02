@@ -9,7 +9,14 @@ import SwiftUI
 
 struct ResultView: View {
     var body: some View {
-        Text("ここは翻訳された結果を返す画面です。")
+        ZStack {
+            Color.background
+                .ignoresSafeArea()
+            
+            VStack {
+                Text("ここは翻訳された結果を返す画面です。")
+            }
+        }
     }
 }
 
