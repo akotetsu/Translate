@@ -51,12 +51,7 @@ struct MainView: View {
                         navigateToResult = true
                     }) {
                         Text("Translate")
-                            .font(.headline)
-                            .padding(.vertical, 12)
-                            .padding(.horizontal, 32)
-                            .background(Color(.systemMint))
-                            .foregroundStyle(Color.black.opacity(0.7))
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .modifier(ButtonCustom())
                     }
                     .navigationDestination(isPresented: $navigateToResult) {
                         ResultView()

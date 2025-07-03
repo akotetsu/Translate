@@ -18,7 +18,7 @@ struct SettingView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                 
                 Spacer()
-                    .frame(height: 70)
+                    .frame(height: 40)
                 
                 VStack {
                     Text("From")
@@ -60,27 +60,29 @@ struct SettingView: View {
                     Spacer()
                         .frame(height: 25)
                     
-                    HStack() {
-                        Spacer()
-                            .frame(width: 30)
-                        Text("At  ")
-                            .modifier(Setting02())
-                        
-                        TextField("ex) Restaurant", text: $situation)
-                            .padding(.bottom, 5) // 下部に少しパディング
-                            .overlay( // 下線を追加
-                                VStack {
-                                    Spacer()
-                                    Rectangle()
-                                        .frame(height: 1) // 線の太さ
-                                        .foregroundColor(.black) // 線の色
-                                }
-                            )
-                            .keyboardType(.default)
-                            .focused($isSituationTextFieldFocused)
-                    }
+                    TextField("ex) Restaurant", text: $situation)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 12)
+                        .background(Color.white)
+                        .cornerRadius(8)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.gray.opacity(0.4), lineWidth: 1)
+                        )
+                        .font(.title2)
+                        .foregroundColor(.black)
+                        .padding(.bottom, 8)
+                    
+                    Spacer()
+                        .frame(height: 45)
+                    
+                    Button {
+                        print("設定を保存")
+                    } label: {
+                        Text("Save")
+                        .modifier(ButtonCustom())                    }
+                    
                 }
-                
                 
                 Spacer()
                 
